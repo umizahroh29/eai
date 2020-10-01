@@ -22,3 +22,10 @@ Data visualization from a database created with Pentaho Data Integration
 1. Clone this repo
 2. Import the database to your local
 3. Open <code>/dashboard</code> in your browser
+
+## 2. Consume API
+Data visualization of the growth of positive cases of COVID 19 in China using the API
+
+### How To Use
+1. Clone this repo]
+2. Open <code>/consume-api/dashboard</code> in your browser
