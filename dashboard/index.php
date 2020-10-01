@@ -170,7 +170,6 @@ $lateGraduateData = json_encode($lateGraduateData);
   let lateGraduateData = JSON.parse('<?php echo $lateGraduateData ?>')
 
   $(function () {
-    console.log(activeData);
     getHealthData()
     getLateGraduateData()
     getActiveData()

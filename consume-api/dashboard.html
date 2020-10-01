@@ -1,0 +1,86 @@
+<html>
+<head>
+    <title>Dashboard Covid 19 China</title>
+
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="m-5">
+<h4 align="center">Statistik Pertumbuhan Covid 19 di China</h4>
+<hr>
+<div class="row">
+    <canvas id="covidChart" height="120"></canvas>
+</div>
+</body>
+</html>
+
+<script>
+  function monthName() {
+    return ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'December'];
+  }
+
+  $(function () {
+    $.ajax({
+      method: 'GET',
+      url: 'https://api.covid19api.com/total/country/china/status/confirmed',
+      dataType: 'json',
+      success: function (response) {
+        let labels = []
+        let month = ''
+        for (let i = 0; i < response.length; i++) {
+          let thisMonth = response[i]['Date'].substr(5, 2)
+
+          if (month !== thisMonth) {
+            labels.push(monthName()[Number(thisMonth - 1)])
+          }
+
+          month = thisMonth
+        }
+
+        let confirmed = 0
+        let confirmedPerMonth = []
+        for (let i = 0; i < labels.length; i++) {
+          for (let j = 0; j < response.length; j++) {
+            let thisMonth = response[j]['Date'].substr(5, 2)
+            if (monthName()[Number(thisMonth - 1)] === labels[i]) {
+              confirmed = response[j]['Cases']
+            }
+          }
+
+          confirmedPerMonth.push(confirmed)
+          confirmed = 0
+        }
+
+        let ctx = $('#covidChart')
+        let data = {
+          labels: labels,
+          datasets: [
+            {
+              label: "Positif",
+              backgroundColor: 'rgba(236, 112, 99)',
+              borderColor: 'rgba(236, 112, 99)',
+              borderWidth: 2,
+              fill: false,
+              lineTension: 0.1,
+              data: confirmedPerMonth,
+            }
+          ]
+        }
+
+        new Chart(ctx, {
+          type: 'line',
+          data: data,
+        })
+      }
+    })
+  })
+</script>
