@@ -1,0 +1,26 @@
+syntax = "proto3";  // Specify proto version
+
+package protos; // Specify package name
+
+//Define the Test service
+service Test {
+    //Define SayTest method
+    rpc SayTest(TestRequest) returns (TestReply) {}
+}
+
+//TestRequest request structure
+message TestRequest {
+    int64 typeid = 1;
+}
+
+//TestReply response structure
+message TestReply {
+
+   //Return data type
+    message GetData {
+      int64 id = 1;
+      string name = 2;
+   }
+
+   repeated GetData getdataarr = 1;
+}
