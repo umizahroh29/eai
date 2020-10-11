@@ -3,5 +3,11 @@
         "grpc/grpc": "^1.30",
         "google/protobuf": "^3.13",
         "ext-grpc": "^1.17"
+    },
+    "autoload": {
+        "psr-4": {
+            "GPBMetadata\\": "user/GPBMetadata/",
+            "User\\": "user/User/"
+        }
     }
 }

@@ -40,4 +40,4 @@ Method integration with Node JS as a server and client
 4. Run <code>npm install --save grpc</code>
 5. Run <code>npm install --save uuid</code>
 6. Run <code>node server.js</code> in your terminal
-7. Open new terminal, then run <code>node accounting/getUser.js</code>
+7. Open new terminal, then run <code>node accounting/getUser.php</code>

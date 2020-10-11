@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+
+<body style="background-color: #2a2a2a;">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="nav navbar-nav">
+            <a class="nav-item nav-link active" href="#"><i class="fa fa-fw fa-home"></i><span
+                    class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="#"> Divisi Accounting<span class="sr-only">(current)</span></a>
+        </div>
+    </nav>
+    <div class="card text-white bg-dark mb-3 mt-5" style="max-width: 100%;">
+        <div class="card-header">Accounting</div>
+        <div class="card-body">
+            <h5 class="card-title">List User Divisi Accounting</h5>
+            <table id="table1" class="table table-hover table-striped table-bordered table-dark" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>Edinburgh</td>
+                        <td>System Architect</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Tokyo</td>
+                        <td>Accountant</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('#table1').DataTable();
+    });
+</script>
