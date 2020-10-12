@@ -56,6 +56,6 @@ Method integration with gRPC. Assume that we have 2 web applications, HRD App, a
 8. Run <code>npm install --save body-parser</code>
 9. Run <code>npm install --save ejs</code>
 10. Run <code>node server.js</code> in your terminal
-11. Open new terminal, then run <code>node accounting/app.php</code>
+11. Open new terminal, then run <code>node accounting/app.js</code>
 12. Open <link>localhost/grpc/hrd/list.php</link> in your browser to show HRD App. You can try to add, update, and delete users on this page.
 13. Open <link>localhost:8180</link> in your browser to show the list of users in the Accounting App. 
