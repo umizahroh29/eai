@@ -29,7 +29,11 @@ server.addService(proto.user.UserService.service, {
     let user = call.request
     user.id = uuidv1()
     dbCon.query(
-      'INSERT INTO users (id, name, email, position ) VALUES ("' + user.id + '", "' + user.name + '", "' + user.email + '", "' + user.position + '")',
+      'INSERT INTO users (id, name, email, position ) VALUES ("' +
+      user.id + '", "' +
+      user.name + '", "' +
+      user.email + '", "' +
+      user.position + '")',
       function (err, result) {
         if (err) throw err
 
@@ -42,7 +46,10 @@ server.addService(proto.user.UserService.service, {
   UpdateUser: (call, callback) => {
     let user = call.request
     dbCon.query(
-      'UPDATE users SET name = "' + user.name + '", email = "' + user.email + '", position = "' + user.position + '" WHERE id = "' + user.id + '"',
+      'UPDATE users SET name = "' + user.name + '", email = "' +
+      user.email + '", position = "' +
+      user.position + '" WHERE id = "' +
+      user.id + '"',
       function (err, result) {
         if (err) throw err
 
