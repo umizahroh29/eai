@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Dashboard Covid 19 China</title>
+
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="m-5">
+<h4 align="center">Statistik Genre Paling Diminati Berdasarkan Rotten Tomatoes</h4>
+<hr>
+<div class="row">
+    <canvas id="filmChart" height="120"></canvas>
+</div>
+</body>
+</html>
+
+<script>
+  $(function () {
+    Array.prototype.unique = function () {
+      let arr = [];
+      for (let i = 0; i < this.length; i++) {
+        if (!arr.includes(this[i])) {
+          arr.push(this[i]);
+        }
+      }
+      return arr;
+    }
+
+    $.ajax({
+      method: 'GET',
+      url: 'movies.json',
+      dataType: 'json',
+      success: function (response) {
+        let genres = []
+        let rates = []
+        for (let i = 0; i < response.length; i++) {
+          let genre = response[i].genre
+          if (genre.includes(',')) {
+            let index = genre.indexOf(',')
+            genre = genre.substring(0, index)
+          }
+
+          genres.push(genre)
+        }
+
+        genres = genres.unique()
+
+        for (let i = 0; i < genres.length; i++) {
+          let rate = 0, count = 0, mean = 0
+          for (let j = 0; j < response.length; j++) {
+            let genre = response[j].genre
+            if (genre.includes(',')) {
+              let index = genre.indexOf(',')
+              genre = genre.substring(0, index)
+            }
+
+            if (genre === genres[i]) {
+              rate += parseInt((response[j].rate !== "0") ? response[j].rate.slice(0, -1) : response[j].rate)
+              count++
+            }
+          }
+
+          mean = (rate / count)
+          rates.push(mean.toFixed(2))
+        }
+
+        let ctx = $('#filmChart')
+        let data = {
+          labels: genres,
+          datasets: [
+            {
+              label: "Genre",
+              backgroundColor: 'rgb(26, 188, 156)',
+              borderColor: 'rgb(26, 188, 156)',
+              borderWidth: 2,
+              fill: false,
+              lineTension: 0.1,
+              data: rates,
+            }
+          ]
+        }
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: data,
+        })
+      }
+    })
+  })
+</script>

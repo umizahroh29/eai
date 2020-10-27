@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>Dashboard Covid 19 China</title>
+
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="m-5">
+<h4 align="center">Spotify Consume API</h4>
+<hr>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <button class="btn btn-primary" id="btnLogin">Masuk</button>
+    </div>
+    <div id="artists" style="display: none">
+        <div class="col-md-12">
+            <div class="card-deck">
+                <div class="card m-2" id="artist_1">
+                    <img class="card-img-top" src="https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b" alt="Card image cap" style="height: 300px; object-fit: cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text followers"></p>
+                    </div>
+                </div>
+                <div class="card m-2" id="artist_2">
+                    <img class="card-img-top" src="https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b" alt="Card image cap" style="height: 300px; object-fit: cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text followers"></p>
+                    </div>
+                </div>
+                <div class="card m-2" id="artist_3">
+                    <img class="card-img-top" src="https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b" alt="Card image cap" style="height: 300px; object-fit: cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text followers"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card-deck">
+                <div class="card m-2" id="artist_4">
+                    <img class="card-img-top" src="https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b" alt="Card image cap" style="height: 300px; object-fit: cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text followers"></p>
+                    </div>
+                </div>
+                <div class="card m-2" id="artist_5">
+                    <img class="card-img-top" src="https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b" alt="Card image cap" style="height: 300px; object-fit: cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text followers"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+  let token
+  $(function () {
+    function showArtist() {
+      const artist = '66CXWjxzNUsdJxJ2JdwvnR,4GNC7GD6oZMSxPGyXy4MNB,7d86ERlvO5UG44j7Va0Y0C,20zafXaLhm5IcXnSU93rNn,2CvaqAMMsX576VBehaJ0Wx'
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.spotify.com/v1/artists?ids=' + artist,
+        dataType: 'json',
+        beforeSend: function (xhr) {
+          xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        },
+        success: function (response) {
+          for (let i = 0; i < response.artists.length; i++) {
+            let elem = $('#artists').find('#artist_' + (i + 1))
+            elem.find('img').attr('src', response.artists[i].images[0].url)
+            elem.find('.card-title').html(response.artists[i].name)
+            elem.find('.followers').html((response.artists[i].followers.total).toLocaleString('us') + ' followers')
+          }
+
+          $('#artists').removeAttr('style')
+        }
+      })
+    }
+
+    $('#btnLogin').click(function () {
+      const data = {
+        grant_type: 'client_credentials',
+        client_id: '7736758d99e24540bd3e8442ad5da48d',
+        client_secret: '26eb98a52c80472f87da71acc97fbb9d'
+      }
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://accounts.spotify.com/api/token',
+        data: data,
+        dataType: 'json',
+        success: function (response) {
+          token = response.access_token
+          $('#btnLogin').attr('style', 'display:none')
+          showArtist()
+        }
+      })
+    })
+  })
+</script>

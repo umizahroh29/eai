@@ -1,0 +1,322 @@
+[
+  {
+    "genre": "Drama, History",
+    "title": "THE TRIAL OF THE CHICAGO 7",
+    "rate": "94%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "THE MORE YOU IGNORE ME",
+    "rate": "83%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "THE DEVIL HAS A NAME",
+    "rate": "31%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "BELLINGCAT: TRUTH IN A POST-TRUTH WORLD",
+    "rate": "100%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "MS. WHITE LIGHT",
+    "rate": "57%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "THE WALL OF MEXICO",
+    "rate": "78%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "SIBYL",
+    "rate": "55%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "AGGIE",
+    "rate": "75%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "TIME",
+    "rate": "99%"
+  },
+  {
+    "genre": "Music, Comedy, Drama",
+    "title": "THE FORTY-YEAR-OLD VERSION",
+    "rate": "98%"
+  },
+  {
+    "genre": "Drama",
+    "title": "CHARM CITY KINGS",
+    "rate": "80%"
+  },
+  {
+    "genre": "Adventure, Comedy, Fantasy",
+    "title": "LOVE AND MONSTERS",
+    "rate": "90%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "SHITHOUSE",
+    "rate": "95%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "TAPEWORM",
+    "rate": "0"
+  },
+  {
+    "genre": "Mystery And Thriller",
+    "title": "THE SECRETS WE KEEP",
+    "rate": "63%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "FROM THE VINE",
+    "rate": "85%"
+  },
+  {
+    "genre": "Musical",
+    "title": "DAVID BYRNE'S AMERICAN UTOPIA",
+    "rate": "97%"
+  },
+  {
+    "genre": "Mystery And Thriller, Horror",
+    "title": "BOOKS OF BLOOD",
+    "rate": "22%"
+  },
+  {
+    "genre": "Horror, Mystery And Thriller",
+    "title": "EVIL EYE",
+    "rate": "55%"
+  },
+  {
+    "genre": "Horror, Mystery And Thriller",
+    "title": "NOCTURNE",
+    "rate": "59%"
+  },
+  {
+    "genre": "Mystery And Thriller, Action",
+    "title": "THE DOORMAN",
+    "rate": "8%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "THE OPENING ACT",
+    "rate": "75%"
+  },
+  {
+    "genre": "Music, Biography, Drama",
+    "title": "CLOUDS",
+    "rate": "87%"
+  },
+  {
+    "genre": "Comedy, Other",
+    "title": "HUBIE HALLOWEEN",
+    "rate": "48%"
+  },
+  {
+    "genre": "Comedy, Fantasy, Kids And Family, Other",
+    "title": "A BABYSITTER'S GUIDE TO MONSTER HUNTING",
+    "rate": "63%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "TOTALLY UNDER CONTROL",
+    "rate": "100%"
+  },
+  {
+    "genre": "Music, Documentary",
+    "title": "HARRY CHAPIN: WHEN IN DOUBT, DO SOMETHING",
+    "rate": "100%"
+  },
+  {
+    "genre": "Mystery And Thriller, Horror",
+    "title": "THE WOLF OF SNOW HOLLOW",
+    "rate": "89%"
+  },
+  {
+    "genre": "Mystery And Thriller, Horror",
+    "title": "DON'T LOOK BACK",
+    "rate": "38%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "BELLY OF THE BEAST",
+    "rate": "100%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "WHAT THE CONSTITUTION MEANS TO ME",
+    "rate": "0"
+  },
+  {
+    "genre": "Documentary, Music",
+    "title": "BLACKPINK: LIGHT UP THE SKY",
+    "rate": "100%"
+  },
+  {
+    "genre": "Drama, Romance",
+    "title": "LOST GIRLS & LOVE HOTELS",
+    "rate": "47%"
+  },
+  {
+    "genre": "Drama",
+    "title": "THE GARDEN LEFT BEHIND",
+    "rate": "92%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "HEIMAT IS A SPACE IN TIME",
+    "rate": "100%"
+  },
+  {
+    "genre": "Drama",
+    "title": "BLACKBIRD",
+    "rate": "64%"
+  },
+  {
+    "genre": "Drama",
+    "title": "MEASURE FOR MEASURE",
+    "rate": "33%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "H IS FOR HAPPINESS",
+    "rate": "76%"
+  },
+  {
+    "genre": "Music, Biography, Drama",
+    "title": "I AM WOMAN",
+    "rate": "64%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "HOUSE OF CARDIN",
+    "rate": "92%"
+  },
+  {
+    "genre": "Fantasy, Horror",
+    "title": "ENTWINED",
+    "rate": "63%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "NAIL IN THE COFFIN: THE FALL AND RISE OF VAMPIRO",
+    "rate": "100%"
+  },
+  {
+    "genre": "Drama",
+    "title": "THE SWERVE",
+    "rate": "100%"
+  },
+  {
+    "genre": "Mystery And Thriller, Horror",
+    "title": "ALIVE",
+    "rate": "78%"
+  },
+  {
+    "genre": "Mystery And Thriller",
+    "title": "ANTEBELLUM",
+    "rate": "28%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "FEELS GOOD MAN",
+    "rate": "95%"
+  },
+  {
+    "genre": "Drama, Comedy, Romance",
+    "title": "TOSS IT",
+    "rate": "71%"
+  },
+  {
+    "genre": "Drama",
+    "title": "CRITICAL THINKING",
+    "rate": "93%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "TEENAGE BADASS",
+    "rate": "73%"
+  },
+  {
+    "genre": "Mystery And Thriller",
+    "title": "RENT-A-PAL",
+    "rate": "66%"
+  },
+  {
+    "genre": "Action, Animation",
+    "title": "RED SHOES AND THE SEVEN DWARFS",
+    "rate": "40%"
+  },
+  {
+    "genre": "Drama, Comedy",
+    "title": "I'VE GOT ISSUES",
+    "rate": "57%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "THE ARGUMENT",
+    "rate": "69%"
+  },
+  {
+    "genre": "Mystery And Thriller, Drama",
+    "title": "UP ON THE GLASS",
+    "rate": "43%"
+  },
+  {
+    "genre": "Documentary",
+    "title": "DTF",
+    "rate": "67%"
+  },
+  {
+    "genre": "Mystery And Thriller",
+    "title": "ALONE",
+    "rate": "93%"
+  },
+  {
+    "genre": "Mystery And Thriller",
+    "title": "RANGE RUNNERS",
+    "rate": "20%"
+  },
+  {
+    "genre": "Mystery And Thriller",
+    "title": "THE OWNERS",
+    "rate": "61%"
+  },
+  {
+    "genre": "Mystery And Thriller, Horror",
+    "title": "NO ESCAPE",
+    "rate": "20%"
+  },
+  {
+    "genre": "Comedy, Adventure, Kids And Family",
+    "title": "CATS & DOGS 3: PAWS UNITE!",
+    "rate": "20%"
+  },
+  {
+    "genre": "-",
+    "title": "",
+    "rate": "0"
+  },
+  {
+    "genre": "Mystery And Thriller, Horror",
+    "title": "MURDER IN THE WOODS",
+    "rate": "80%"
+  },
+  {
+    "genre": "Action, Documentary",
+    "title": "STUNTWOMEN: THE UNTOLD HOLLYWOOD STORY",
+    "rate": "100%"
+  },
+  {
+    "genre": "Comedy",
+    "title": "SUMMERLAND",
+    "rate": "87%"
+  }
+]
