@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBahanBakuTable extends Migration
+class CreateBarangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateBahanBakuTable extends Migration
      */
     public function up()
     {
-        Schema::create('bahan_baku', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->unsignedInteger('id_vendor');
-            $table->unsignedInteger('id_rak');
+        Schema::create('barang', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedInteger('id_vendor')->references('id')->on('vendor');
+            $table->unsignedInteger('id_rak')->references('id')->on('rak_penyimpanan');
             $table->string('nama');
             $table->string('tipe');
-            $table->string('kuantitas');
+            $table->bigInteger('kuantitas');
             $table->decimal('harga');
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateBahanBakuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bahan_baku');
+        Schema::dropIfExists('barang');
     }
 }

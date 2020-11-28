@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vendor extends Model
+class RequestBarang extends Model
 {
     use HasFactory;
 
@@ -14,17 +14,22 @@ class Vendor extends Model
      *
      * @var string
      */
-    protected $table = 'vendor';
+    protected $table = 'request_barang';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['nama', 'tipe_barang', 'alamat'];
+    protected $fillable = ['id_vendor', 'id_karyawan', 'id_barang', 'kuantitas', 'harga', 'disetujui'];
+
+    public function vendor()
+    {
+        return $this->belongsTo('App\Models\Vendor', 'id', 'id_vendor');
+    }
 
     public function barang()
     {
-        return $this->hasMany('App\Models\Barang', 'id', 'id_barang');
+        return $this->belongsTo('App\Models\Barang', 'id', 'id_barang');
     }
 }

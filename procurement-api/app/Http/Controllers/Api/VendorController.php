@@ -33,7 +33,7 @@ class VendorController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => 'required',
-            'tipe_bahan_baku' => 'required',
+            'tipe_barang' => 'required',
             'alamat' => 'required'
         ]);
 
@@ -62,7 +62,7 @@ class VendorController extends Controller
     {
         return response()->json([
             'message' => 'Here is your vendor.',
-            'data' => $vendor
+            'data' => $vendor->load('barang')
         ], 200);
     }
 
@@ -77,7 +77,7 @@ class VendorController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => 'required',
-            'tipe_bahan_baku' => 'required',
+            'tipe_barang' => 'required',
             'alamat' => 'required'
         ]);
 
