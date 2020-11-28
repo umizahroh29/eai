@@ -25,6 +25,6 @@ class Warehouse extends Model
 
     public function rak()
     {
-        return $this->hasMany('App\Models\RakPenyimpanan', 'id', 'id_rak');
+        return $this->hasMany('App\Models\RakPenyimpanan', 'id_warehouse');
     }
 }

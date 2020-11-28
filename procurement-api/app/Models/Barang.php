@@ -25,11 +25,11 @@ class Barang extends Model
 
     public function vendor()
     {
-        return $this->belongsTo('App\Models\Vendor', 'id', 'id_vendor');
+        return $this->belongsTo('App\Models\Vendor', 'id_vendor');
     }
 
     public function rak()
     {
-        return $this->belongsTo('App\Models\RakPenyimpanan', 'id', 'id_rak');
+        return $this->belongsTo('App\Models\RakPenyimpanan', 'id_rak');
     }
 }

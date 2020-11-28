@@ -16,7 +16,8 @@ class VendorController extends Controller
      */
     public function index()
     {
-        $vendors = Vendor::all();
+        // with('barang') ini sesuai dengan relasi entity di model
+        $vendors = Vendor::with('barang')->get();
         return response()->json([
             'message' => 'Fetching all vendors.',
             'data' => $vendors
@@ -31,6 +32,7 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {
+        // validator nya liat di variable "filled" di Model sesuai entity
         $validator = Validator::make($request->all(), [
             'nama' => 'required',
             'tipe_barang' => 'required',
@@ -60,6 +62,7 @@ class VendorController extends Controller
      */
     public function show(Vendor $vendor)
     {
+        // load('barang') ini sesuai dengan relasi entity di model
         return response()->json([
             'message' => 'Here is your vendor.',
             'data' => $vendor->load('barang')

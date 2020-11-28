@@ -20,7 +20,7 @@ class CreateBarangTable extends Migration
             $table->string('nama');
             $table->string('tipe');
             $table->bigInteger('kuantitas');
-            $table->decimal('harga');
+            $table->decimal('harga', 10, 2);
             $table->timestamps();
         });
     }

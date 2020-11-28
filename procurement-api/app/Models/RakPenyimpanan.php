@@ -25,11 +25,11 @@ class RakPenyimpanan extends Model
 
     public function warehouse()
     {
-        return $this->belongsTo('App\Models\Warehouse', 'id', 'id_warehouse');
+        return $this->belongsTo('App\Models\Warehouse', 'id_warehouse');
     }
 
     public function barang()
     {
-        return $this->hasMany('App\Models\Barang', 'id', 'id_barang');
+        return $this->hasMany('App\Models\Barang', 'id_rak');
     }
 }

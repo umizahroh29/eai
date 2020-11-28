@@ -19,7 +19,7 @@ class CreateRequestBarangTable extends Migration
             $table->unsignedInteger('id_karyawan');
             $table->unsignedInteger('id_barang')->references('id')->on('barang');
             $table->integer('kuantitas');
-            $table->decimal('harga');
+            $table->decimal('harga', 10, 2);
             $table->boolean('disetujui')->default(false);
             $table->timestamps();
         });

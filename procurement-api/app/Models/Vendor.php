@@ -25,6 +25,6 @@ class Vendor extends Model
 
     public function barang()
     {
-        return $this->hasMany('App\Models\Barang', 'id', 'id_barang');
+        return $this->hasMany('App\Models\Barang', 'id_vendor');
     }
 }

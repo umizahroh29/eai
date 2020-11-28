@@ -19,3 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('vendor', \App\Http\Controllers\Api\VendorController::class);
+Route::resource('warehouse', \App\Http\Controllers\Api\WarehouseController::class);
+Route::resource('rak-penyimpanan', \App\Http\Controllers\Api\RakPenyimpananController::class);
+Route::resource('barang', \App\Http\Controllers\Api\BarangController::class);
+
+Route::post('barang/request', [\App\Http\Controllers\Api\BarangController::class, 'request']);
+Route::put('barang/approve/{requestBarang}', [\App\Http\Controllers\Api\BarangController::class, 'approve']);
+Route::put('barang/update-quantity/{barang}', [\App\Http\Controllers\Api\BarangController::class, 'updateQuantity']);
