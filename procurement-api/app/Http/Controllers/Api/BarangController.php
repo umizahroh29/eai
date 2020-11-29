@@ -17,7 +17,11 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+        $barangs = Barang ::with('vendor','rak')->get();
+        return response()->json([
+            'message' => 'Fetching all barangs.',
+            'data' => $barangs
+        ], 200);
     }
 
     /**
@@ -40,6 +44,10 @@ class BarangController extends Controller
     public function show(Barang $barang)
     {
         //
+        return response()->json([
+            'message' => 'Here is your barang.',
+            'data' => $barang->load('vendor','rak')
+        ], 200);
     }
 
     /**
