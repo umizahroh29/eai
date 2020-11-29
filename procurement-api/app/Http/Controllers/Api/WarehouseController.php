@@ -74,7 +74,27 @@ class WarehouseController extends Controller
      */
     public function update(Request $request, Warehouse $warehouse)
     {
-        //
+        $validator = Validator:: make($request->all(),[
+            'id_karyawan' => 'required',
+            'lokasi' => 'required' 
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation Error',
+                'error' => $validator->errors()
+            ], 422);
+        }
+
+        $warehouse->update($validator->validated());
+
+        return response()->json([
+            'message' => 'Successfully Updated Warehouse',
+            'data' => $warehouse
+        ], 200);
+
+
+        
     }
 
     /**
@@ -85,6 +105,12 @@ class WarehouseController extends Controller
      */
     public function destroy(Warehouse $warehouse)
     {
-        //
+        $id = $warehouse->id;
+        $warehouse->delete();
+
+        return response()->json([
+            'message' =>'Succesfully Delete Warehouse',
+            'data' => $id
+        ], 200);
     }
 }
