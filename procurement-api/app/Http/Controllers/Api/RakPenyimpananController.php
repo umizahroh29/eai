@@ -110,5 +110,12 @@ class RakPenyimpananController extends Controller
     public function destroy(RakPenyimpanan $rakPenyimpanan)
     {
         //
+        $id = $rakPenyimpanan->id;
+        $rakPenyimpanan->delete();
+
+        return response()->json([
+            'message' => 'Successfully Deleted Rak Penyimpanan',
+            'data' => $id
+        ], 200);
     }
 }
