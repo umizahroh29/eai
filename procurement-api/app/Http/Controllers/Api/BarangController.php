@@ -33,8 +33,8 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'id_vendor' => 'required',
-            'id_rak' => 'required',
+            'id_vendor' => 'required|exists:vendor,id',
+            'id_rak' => 'required|exists:rak_penyimpanan,id',
             'nama' => 'required',
             'tipe' => 'required',
             'kuantitas' => 'required',
@@ -81,8 +81,8 @@ class BarangController extends Controller
     public function update(Request $request, Barang $barang)
     {
         $validator = Validator::make($request->all(), [
-            'id_vendor' => 'required',
-            'id_rak' => 'required',
+            'id_vendor' => 'required|exists:vendor,id',
+            'id_rak' => 'required|exists:rak_penyimpanan,id',
             'nama' => 'required',
             'tipe' => 'required',
             'kuantitas' => 'required',

@@ -76,7 +76,7 @@ class WarehouseController extends Controller
     {
         $validator = Validator:: make($request->all(),[
             'id_karyawan' => 'required',
-            'lokasi' => 'required' 
+            'lokasi' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -92,9 +92,6 @@ class WarehouseController extends Controller
             'message' => 'Successfully Updated Warehouse',
             'data' => $warehouse
         ], 200);
-
-
-        
     }
 
     /**

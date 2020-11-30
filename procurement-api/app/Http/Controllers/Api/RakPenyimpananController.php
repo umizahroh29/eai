@@ -34,7 +34,7 @@ class RakPenyimpananController extends Controller
     {
         //
         $validator = Validator::make($request->all(),[
-            'id_warehouse' => 'required',
+            'id_warehouse' => 'required|exists:rak_penyimpanan,id',
             'tipe_rak' => 'required',
             'jumlah_barang' => 'required'
         ]);
@@ -81,7 +81,7 @@ class RakPenyimpananController extends Controller
     {
         //
         $validator = Validator::make($request->all(), [
-            'id_warehouse' => 'required',
+            'id_warehouse' => 'required|exists:rak_penyimpanan,id',
             'tipe_rak' => 'required',
             'jumlah_barang' => 'required'
         ]);
